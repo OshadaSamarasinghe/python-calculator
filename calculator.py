@@ -41,7 +41,7 @@ operations = {
     'cos': cos,
     'tan': tan
 }
-
+#list to store calculator history
 history = []
 
 while True:
@@ -68,9 +68,9 @@ while True:
         print("Calculation History:")
         for history_list in history:
             print(history_list)
-            
         continue
 
+#taking inputs from the user and checking the operator user select
     if choice in operations:
         if choice in ('sr','sin','cos','tan'):
             num = float(input("Enter a number: "))
@@ -81,7 +81,8 @@ while True:
             num2 = float(input("Enter the second number: "))
             result = operations[choice](num1, num2)
             calculation = f"{num1} {choice} {num2} = {result}"
-        
+
+#printing results
         history.append(calculation)
         print("Result:", calculation)
         print(" ")
